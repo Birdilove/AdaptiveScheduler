@@ -24,6 +24,7 @@ import com.project.major7thsem.scheduler.db.TaskContract;
 import com.project.major7thsem.scheduler.db.TaskDpHelper;
 
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         db.delete(TaskContract.TaskEntry.TABLE,
                 TaskContract.TaskEntry.COL_TASK_TITLE + " = ?",
                 new String[]{task});
+        String deletetask;
         db.close();
         updateUI();
     }
